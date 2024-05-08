@@ -48,7 +48,7 @@ public class MethodChallenges {
 
         // scorePlayerFive
         playerPosition = calculateHighScorePosition(scorePlayerFive);
-        displayHighScorePosition("Pedro", playerPosition);
+        displayHighScorePosition("Mario", playerPosition);
 
         // endregion
 

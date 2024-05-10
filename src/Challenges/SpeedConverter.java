@@ -24,17 +24,52 @@ public class SpeedConverter {
 
 
     public static void main(String[] args) {
+        // region VALUES
+
+        double TOMILESPERHOURTESTNEGATVIE = -1;
+        double TOMILESPERHOURTESTNEGATVIELARGE = -5.6;
+        double TOMILESPERHOUSETEST =  75.114;
+
+        // endregion
+
+        // region TEST TO MILES PER HOUR
+
+        System.out.println(toMilesPerHour(TOMILESPERHOURTESTNEGATVIE));
+        System.out.println(toMilesPerHour(TOMILESPERHOURTESTNEGATVIELARGE));
+        System.out.println(toMilesPerHour(TOMILESPERHOUSETEST));
+
+        printConversion(1.5);
+        printConversion(0.0);
+        printConversion(10.25);
+        printConversion(-5.6);
+        printConversion(75.114);
+        printConversion(200);
+        // endregion
 
     }
 
     public static  long toMilesPerHour (double kilometerPerHour){
         long milesPerHour = -1 ;
 
-        if(kilometerPerHour > 0){
-            milesPerHour = Math.round(kilometerPerHour);
+        if(kilometerPerHour >= 0){
+         milesPerHour = Math.round(kilometerPerHour / 1.609);
         }
 
         return milesPerHour;
     }
-    
+
+    public static void   printConversion (double kilometerPerHour){
+        String invalidValue = "Invalid Value";
+
+        long milesPerHour = toMilesPerHour(kilometerPerHour);
+
+        if(milesPerHour == -1){
+            System.out.println(invalidValue);
+        } else {
+            String responseFormat = kilometerPerHour +  " km/h = "+ milesPerHour +" mi/h";
+            System.out.println(responseFormat);
+        }
+        }
+
+
 }

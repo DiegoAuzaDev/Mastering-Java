@@ -17,6 +17,9 @@ public class DecimalComparator {
         return decimalPartY.equals(decimalPartX);
 
      */
+        DecimalFormat df = new DecimalFormat("#.###");
+        System.out.println(df.format(x));
+
         // endregion
 
         int intX = (int)(x * 1000);

@@ -30,11 +30,34 @@ public class ReadingUserInput {
 
         String userName = scanner.nextLine();
 
-        System.out.printf("Welcome %s, enter your birth year to calculate your age%n", userName);
+        boolean validDOB = false;
 
-        int userAge = scanner.nextInt();
+        int age = 0;
 
-        return "%s, you are %d years old".formatted(userName, (currentYear - userAge));
+        do{
+            System.out.println("Enter a year of birth >= " +
+                    (currentYear - 125) + " and <=" + (currentYear));
+    try {
+        age = checkData(currentYear, scanner.nextLine());
+        validDOB = age >= 0;
+    } catch (NumberFormatException badUserAgeInput){
+        System.out.println("Character not allowed!! try again ");
     }
+
+        } while (!validDOB);
+        return userName +" you are " + age + " years old";
+    }
+
+    public static  int checkData(int currentYear, String dateOfBirth){
+        int dob = Integer.parseInt(dateOfBirth);
+        int minimumYear = currentYear - 125;
+
+    if(dob < minimumYear || dob > currentYear){
+        return -1;
+    }
+
+    return (currentYear -dob);
+    }
+
 
 }

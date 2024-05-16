@@ -3,7 +3,7 @@ package Challenges;
 public class NarcissisticNumber {
 
     public static void main(String[] args) {
-    isNarcissistic(153);
+    System.out.println(isNarcissistic(153));
     }
 
     // region METHOD

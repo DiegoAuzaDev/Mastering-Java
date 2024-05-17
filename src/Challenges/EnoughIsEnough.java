@@ -1,5 +1,8 @@
 package Challenges;
 
+import java.lang.constant.DynamicCallSiteDesc;
+import java.util.*;
+
 public class EnoughIsEnough {
 
     /*
@@ -21,22 +24,40 @@ public class EnoughIsEnough {
     With list [20, 37, 20, 21] and number 1, the result would be [20, 37, 21]
      */
 
-
     public static void main(String[] args) {
 
-    }
+        int[] elements = {1 , 2, 3 , 1, 2, 1, 2, 3};
+        int maxOccurrences = 2;
 
+       deleteNth(elements, maxOccurrences);
+
+    }
 
     public static int[] deleteNth(int[] elements, int maxOccurrences) {
-        int[] finalList = new int[] {};
 
-        for (int i = 0; i < elements.length ; i++) {
-                
+        HashMap<Integer, Integer> occurrences = new HashMap<Integer, Integer>() {};
+        List<Integer> myList = new ArrayList<Integer>();
+
+        for (int item: elements) {
+
+            if(occurrences.containsKey(item)){
+                int numberOfTimes = (int) occurrences.get(item);
+                occurrences.put(item, numberOfTimes + 1);
+            }
+            else {
+                occurrences.put(item, 1);
+            }
+            if( (Integer) occurrences.get(item) <= maxOccurrences ){
+                myList.add(item);
+            }
+        }
+    int[] result = new int[myList.size()];
+        for(int i = 0 ; i < myList.size() ; i ++){
+            result[i] = myList.get(i);
         }
 
-        return null;
+        return result;
     }
-
 
 }
 

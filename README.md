@@ -39,6 +39,75 @@ Java provides 4 integers types.
 In most situations, the **int** type is most practical. If you want to represent the number of inhabitants of our planet, you'll need to 
 resort to **long**. The byte and short type are mainly intended fo specialized applications.
 
+## Reference vs Objected vs Instance vs Class
+
+### Reference
+
+Let's use the analogy of building a house to understand classes.
+A class is basically a blueprint for the house. Using the blueprints, we can build 
+as many houses as we like, based on those plans.
+Each house we build (in other words using the new operator) is and object.
+This object can be known as an instance, often we'll say it's an instance of the class.
+So we would have an instance of house in this example.
+
+Each house we build has an address (a physical location).
+In other words, if we want to tell someone where we live, we give them our address (perhaps written on a piece of paper)
+This is known as a reference.
+
+We can copy that reference as many times as we like, but there is still just one house that we're referring to.
+In other words, we're copying the paper that has the address on it, not the house itself.
+We can pass references as parameters to constructors and methods.
+
+````
+// Create a class House - House blueprint
+public class House {
+
+    // create fields of the House class - Color
+    private String color;
+
+    // In order to create a house we must set a color to it
+    public House(String color){
+        this.color = color;
+    }
+    
+    // After creating the house, we can also change it's color
+    public void setColor(String color){
+        this.color = color;
+    }
+
+}
+
+````
+
+````
+
+public class Main {
+
+    House blueHouse = new House("blue");
+    /*
+    The line House bluehouse = new House("blue"); creates a new instance of the House class.
+    Remember House is a bluepront, and we are assinging it to the blueHose varaible.
+    In other words it is a reference to the object in memory.
+    */
+    
+    House anotherHouse = blueHouse;
+     /*
+    The next line House anotherHouse = blueHouse; creates another reference to the same onject
+    in memory. Here we hace to reference pointing to the same object in memory. There is still one hose,
+    but two references to that one object. In other words we have two pieces of paper with the physical address
+    of where the house is buit
+    */
+    
+    System.out.println(blueHouse.getColor()); // blue
+    System.out.println(anotherHouse.getColor()); // blue
+    
+    anotherHouse.setColor("yellow");
+    System.out.println(blueHouse.getColor()); // yellow
+    System.out.println(anotherHouse.getColor()); // yellow
+
+````
+
+![Class-Objects-References](img.png)
 
 
 

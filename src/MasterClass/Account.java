@@ -28,9 +28,7 @@ public class Account {
 
     public Account(String name, String email, int phoneNumber) {
         this(0, 0.0 , name, email, phoneNumber);
-//        this.name = name;
-//        this.email = email;
-//        this.phoneNumber = phoneNumber;
+
     }
 
     // endregion

@@ -39,7 +39,7 @@ Java provides 4 integers types.
 In most situations, the **int** type is most practical. If you want to represent the number of inhabitants of our planet, you'll need to 
 resort to **long**. The byte and short type are mainly intended fo specialized applications.
 
-## Reference vs Objected vs Instance vs Class
+## Reference vs Objects vs Instance vs Class
 
 ### Reference
 

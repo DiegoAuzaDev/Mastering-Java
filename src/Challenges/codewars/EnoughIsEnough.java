@@ -1,4 +1,4 @@
-package Challenges;
+package Challenges.codewars;
 
 import java.lang.constant.DynamicCallSiteDesc;
 import java.util.*;

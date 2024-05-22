@@ -1,4 +1,4 @@
-package Challenges;
+package Challenges.codewars;
 
 // Positive, Negative or Zero
 // Write a method called checkNumber with an int parameter named number.

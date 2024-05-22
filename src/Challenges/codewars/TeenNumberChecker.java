@@ -1,4 +1,4 @@
-package Challenges;
+package Challenges.codewars;
 
 public class TeenNumberChecker {
 

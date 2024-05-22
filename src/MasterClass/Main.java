@@ -15,7 +15,7 @@ package MasterClass;
 // endregion
 
 
-import Challenges.Customer;
+import Challenges.codewars.Customer;
 
 public class Main {
     public static void main(String[] args) {

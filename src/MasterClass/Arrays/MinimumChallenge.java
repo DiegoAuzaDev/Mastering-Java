@@ -17,7 +17,7 @@ public class MinimumChallenge {
         System.out.println("You entered the following numbers " + Arrays.toString(inputNumber));
         int minimumValue = minimumValue(inputNumber);
         System.out.println("We found to minimum number : " + minimumValue);
-
+        System.out.println("this is the reversed list " + Arrays.toString(reverser(inputNumber)));
     }
 
     static int[] readIntegers (String... listOfString){
@@ -35,6 +35,20 @@ public class MinimumChallenge {
         int[] sortedList = Arrays.copyOf(listOfNumber, listOfNumber.length);
         Arrays.sort(sortedList);
         return sortedList[0] ;
+    }
+
+    static int[] reverser ( int... listToReverse){
+
+        int mid = listToReverse.length / 2;
+        int max = listToReverse.length - 1;
+
+        for (int i = 0; i < mid; i++) {
+            int temp = listToReverse[i];
+            listToReverse[i] = listToReverse[max - i ];
+            listToReverse[max - i] = temp;
+
+        }
+        return listToReverse;
     }
 
 }

@@ -18,7 +18,7 @@ public class Main {
         groceryArray[1] = new GroceryItem("Apples", "PRODUCT", 6);
         groceryArray[2] = new GroceryItem("oranges", "PRODUCT", 5);
 
-    System.out.println(Arrays.toString(groceryArray));
+        System.out.println(Arrays.toString(groceryArray));
 
         ArrayList objectList = new ArrayList();
 
